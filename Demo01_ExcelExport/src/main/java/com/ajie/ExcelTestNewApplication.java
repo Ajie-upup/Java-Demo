@@ -12,8 +12,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 @SpringBootApplication
 @MapperScan("com.ajie.mapper")
-public class ExcelTestApplication {
+public class ExcelTestNewApplication {
     public static void main(String[] args) {
-        SpringApplication.run(ExcelTestApplication.class, args);
+        SpringApplication.run(ExcelTestNewApplication.class, args);
     }
 }
