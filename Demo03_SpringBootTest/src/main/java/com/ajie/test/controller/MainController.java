@@ -7,7 +7,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 
 /**
  * @author ajie
@@ -28,5 +31,16 @@ public class MainController {
         }
         return "success";
     }
+
+    @RequestMapping(value = "/testQueryMap", method = {RequestMethod.GET, RequestMethod.POST})
+    public String testQueryMap(HttpServletRequest request) {
+        String id = request.getParameter("id");
+        Map<String, Object> studentInfo = studentDao.selectById(id);
+        String name = (String) studentInfo.get("name");
+        Integer age = (Integer) studentInfo.get("age");
+        System.out.println(name + " " + age);
+        return "success";
+    }
+
 
 }
