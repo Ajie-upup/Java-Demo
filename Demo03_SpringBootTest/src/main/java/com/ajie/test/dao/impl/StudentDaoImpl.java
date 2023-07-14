@@ -35,4 +35,12 @@ public class StudentDaoImpl implements StudentDao {
                 .append(id);
         return jdbcTemplate.queryForMap(sqlBuffer.toString());
     }
+
+    @Override
+    public String selectNameById(String id) {
+
+        String sql = " select name from student where id = ? ";
+        return jdbcTemplate.queryForObject(sql, String.class, new Object[]{id});
+    }
+
 }

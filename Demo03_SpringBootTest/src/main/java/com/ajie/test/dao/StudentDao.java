@@ -17,4 +17,6 @@ public interface StudentDao {
 
 
     Map<String, Object> selectById(String id);
+
+    String selectNameById(String id);
 }

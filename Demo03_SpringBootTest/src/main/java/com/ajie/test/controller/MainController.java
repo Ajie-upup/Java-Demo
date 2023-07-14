@@ -42,5 +42,12 @@ public class MainController {
         return "success";
     }
 
+    @RequestMapping(value = "/testQueryString", method = {RequestMethod.GET, RequestMethod.POST})
+    public String testQueryString(HttpServletRequest request) {
+        String id = request.getParameter("id");
+        String name = studentDao.selectNameById(id);
+        System.out.println(name);
+        return "success";
+    }
 
 }
